@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id commande:</b>
+  <%= @pieces_commande.id_commande %>
+</p>
+
+<p>
+  <b>Id piece:</b>
+  <%= @pieces_commande.id_piece %>
+</p>
+
+
+<%= link_to 'Edit', edit_pieces_commande_path(@pieces_commande) %> |
+<%= link_to 'Back', pieces_commandes_path %>

@@ -1,0 +1,8 @@
+class Personne < ActiveRecord::Base
+
+belongs_to :user
+belongs_to :role
+has_many :pieces, :foreign_key => "id_pers"
+has_many :commandes
+
+end

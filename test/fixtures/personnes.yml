@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  nom: MyString
+  prenom: MyString
+  mail: MyString
+  tel: MyString
+  adresse: MyString
+  login: MyString
+  pass: MyString
+  id_role: 1
+
+two:
+  id: 1
+  nom: MyString
+  prenom: MyString
+  mail: MyString
+  tel: MyString
+  adresse: MyString
+  login: MyString
+  pass: MyString
+  id_role: 1

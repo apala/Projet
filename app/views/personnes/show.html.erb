@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @personne.id %>
+</p>
+
+<p>
+  <b>Nom:</b>
+  <%= @personne.nom %>
+</p>
+
+<p>
+  <b>Prenom:</b>
+  <%= @personne.prenom %>
+</p>
+
+<p>
+  <b>Mail:</b>
+  <%= @personne.mail %>
+</p>
+
+<p>
+  <b>Tel:</b>
+  <%= @personne.tel %>
+</p>
+
+<p>
+  <b>Adresse:</b>
+  <%= @personne.adresse %>
+</p>
+
+<p>
+  <b>Login:</b>
+  <%= @personne.login %>
+</p>
+
+<p>
+  <b>Pass:</b>
+  <%= @personne.pass %>
+</p>
+
+<p>
+  <b>Id role:</b>
+  <%= @personne.id_role %>
+</p>
+
+
+<%= link_to 'Edit', edit_personne_path(@personne) %> |
+<%= link_to 'Back', personnes_path %>

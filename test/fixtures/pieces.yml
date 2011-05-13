@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  ref: MyString
+  nom: MyString
+  prix: 1.5
+  stock: 1
+  desc: MyString
+  id_pers: 1
+
+two:
+  id: 1
+  ref: MyString
+  nom: MyString
+  prix: 1.5
+  stock: 1
+  desc: MyString
+  id_pers: 1

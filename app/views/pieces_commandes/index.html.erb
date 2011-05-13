@@ -1,0 +1,25 @@
+<h1>Listing pieces_commandes</h1>
+
+<table>
+  <tr>
+    <th>Id commande</th>
+    <th>Id piece</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pieces_commandes.each do |pieces_commande| %>
+  <tr>
+    <td><%= pieces_commande.id_commande %></td>
+    <td><%= pieces_commande.id_piece %></td>
+    <td><%= link_to 'Show', pieces_commande %></td>
+    <td><%= link_to 'Edit', edit_pieces_commande_path(pieces_commande) %></td>
+    <td><%= link_to 'Destroy', pieces_commande, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pieces commande', new_pieces_commande_path %>

@@ -1,0 +1,36 @@
+<h1>Listing pieces of <%=@personne.prenom %></h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Ref</th>
+    <th>Nom</th>
+    <th>Prix</th>
+    <th>Stock</th>
+    <th>Desc</th>
+    <th>Id pers</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pieces.each do |piece| %>
+  <tr>
+    <td><%= piece.id %></td>
+    <td><%= piece.ref %></td>
+    <td><%= piece.nom %></td>
+    <td><%= piece.prix %></td>
+    <td><%= piece.stock %></td>
+    <td><%= piece.desc %></td>
+    <td><%= piece.id_pers %></td>
+    <td><%= link_to 'Show', [@personne, piece] %></td>
+    <td><%= link_to 'Edit', edit_piece_path(@personne, piece) %></td>
+    <td><%= link_to 'Destroy', [@personne, piece], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Piece', new_personne_piece_path %> |
+<%= link_to 'Back', personnes_path %>

@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @piece.id %>
+</p>
+
+<p>
+  <b>Ref:</b>
+  <%= @piece.ref %>
+</p>
+
+<p>
+  <b>Nom:</b>
+  <%= @piece.nom %>
+</p>
+
+<p>
+  <b>Prix:</b>
+  <%= @piece.prix %>
+</p>
+
+<p>
+  <b>Stock:</b>
+  <%= @piece.stock %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @piece.desc %>
+</p>
+
+<p>
+  <b>Id pers:</b>
+  <%= @piece.id_pers %>
+</p>
+
+
+<%= link_to 'Edit', edit_personne_piece_path(@personne, @piece) %> |
+<%= link_to 'Back', personne_pieces_path(@personne) %>
