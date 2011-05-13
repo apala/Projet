@@ -2,6 +2,8 @@
 <% if user_signed_in? %>
 <h2>Bienvenue : <%=current_user.prenom %> <%=current_user.nom %></h2>
 
+<%= link_to 'Mon Compte', user_path(current_user) %> |
+<%= link_to 'Mes Pieces', user_pieces_path(current_user) %>
 
 <h3>Liste des produits à vendre</h3>
 <table border="1">
