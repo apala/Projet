@@ -1,4 +1,6 @@
 class CommandesController < ApplicationController
+
+  before_filter :authenticate_user!
   # GET /commandes
   # GET /commandes.xml
   def index

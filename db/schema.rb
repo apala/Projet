@@ -10,25 +10,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110513093450) do
+ActiveRecord::Schema.define(:version => 20110513131647) do
 
   create_table "commandes", :force => true do |t|
     t.date     "date"
     t.integer  "qte"
-    t.integer  "id_pers"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "personnes", :force => true do |t|
-    t.string   "nom"
-    t.string   "prenom"
-    t.string   "mail"
-    t.string   "tel"
-    t.string   "adresse"
-    t.string   "login"
-    t.string   "pass"
-    t.integer  "id_role"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -39,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20110513093450) do
     t.float    "prix"
     t.integer  "stock"
     t.string   "desc"
-    t.integer  "id_pers"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -47,12 +34,6 @@ ActiveRecord::Schema.define(:version => 20110513093450) do
   create_table "pieces_commandes", :force => true do |t|
     t.integer  "id_commande"
     t.integer  "id_piece"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "roles", :force => true do |t|
-    t.string   "nom"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -70,6 +51,10 @@ ActiveRecord::Schema.define(:version => 20110513093450) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "nom"
+    t.string   "prenom"
+    t.string   "tel"
+    t.string   "adresse"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

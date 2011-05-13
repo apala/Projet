@@ -8,7 +8,7 @@
     <th>Prix</th>
     <th>Stock</th>
     <th>Desc</th>
-    <th>Id pers</th>
+    <th>User id</th>
     <th></th>
     <th></th>
     <th></th>
@@ -22,9 +22,9 @@
     <td><%= piece.prix %></td>
     <td><%= piece.stock %></td>
     <td><%= piece.desc %></td>
-    <td><%= piece.id_pers %></td>
+    <td><%= piece.user_id %></td>
     <td><%= link_to 'Show', [@personne, piece] %></td>
-    <td><%= link_to 'Edit', edit_personne_piece_path(@personne, piece) %></td>
+    <td><%= link_to 'Edit', edit_user_piece_path(@personne, piece) %></td>
     <td><%= link_to 'Destroy', [@personne, piece], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -32,5 +32,5 @@
 
 <br />
 
-<%= link_to 'New Piece', new_personne_piece_path %> |
-<%= link_to 'Back', personnes_path %>
+<%= link_to 'New Piece', new_user_piece_path %> |
+<%= link_to 'Back', users_path %>

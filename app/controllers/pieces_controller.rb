@@ -1,8 +1,9 @@
 class PiecesController < ApplicationController
-  # GET /personnes/1/pieces
+  before_filter :authenticate_user!
+  # GET /users/1/pieces
   # GET /personnes/1/pieces.xml
   def index
-    @personne = Personne.find(params[:personne_id])
+    @personne = User.find(params[:user_id])
     @pieces = @personne.pieces
 
     respond_to do |format|
@@ -14,7 +15,7 @@ class PiecesController < ApplicationController
   # GET /personnes/1/pieces/1
   # GET /personnes/1/pieces/1.xml
   def show
-    @personne = Personne.find(params[:personne_id])
+    @personne = User.find(params[:user_id])
     @piece = @personne.pieces.find(params[:id])
 
     respond_to do |format|
@@ -25,8 +26,9 @@ class PiecesController < ApplicationController
 
   # GET /personnes/1/pieces/new
   # GET /personnes/1/pieces/new.xml
+
   def new
-    @personne = Personne.find(params[:personne_id])
+    @personne = User.find(params[:user_id])
     @piece = @personne.pieces.build
 
     respond_to do |format|
@@ -37,14 +39,14 @@ class PiecesController < ApplicationController
 
   # GET /personnes/1/pieces/1/edit
   def edit
-    @personne = Personne.find(params[:personne_id])
+    @personne = User.find(params[:user_id])
     @piece = @personne.pieces.find(params[:id])
   end
 
   # POST /personnes/1/pieces
   # POST /personnes/1/pieces.xml
   def create
-    @personne = Personne.find(params[:personne_id])
+    @personne = User.find(params[:user_id])
     @piece = @personne.pieces.build(params[:piece])
 
     respond_to do |format|
@@ -61,7 +63,7 @@ class PiecesController < ApplicationController
   # PUT /personnes/1/pieces/1
   # PUT /personnes/1/pieces/1.xml
   def update
-    @personne = Personne.find(params[:personne_id])
+    @personne = User.find(params[:user_id])
     @piece = @personne.pieces.find(params[:id])
 
     respond_to do |format|
@@ -78,13 +80,24 @@ class PiecesController < ApplicationController
   # DELETE /personnes/1/pieces/1
   # DELETE /personnes/1/pieces/1.xml
   def destroy
-    @personne = Personne.find(params[:personne_id])
+    @personne = User.find(params[:user_id])
     @piece = @personne.pieces.find(params[:id])
     @piece.destroy
 
     respond_to do |format|
-      format.html { redirect_to(personne_pieces_url) }
+      format.html { redirect_to(user_pieces_url) }
       format.xml  { head :ok }
     end
+  end
+
+ #acheter un produit
+  def buy 
+    @piece = Piece.find(params[:id])
+
+    @piece.stock = @piece.stock-1
+
+    @piece.save
+
+    redirect_to root_path, :notice => "Product was seccessfully bought!"
   end
 end

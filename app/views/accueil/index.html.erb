@@ -1,2 +1,30 @@
-<h1>Accueil#index</h1>
-<p>Find me in app/views/accueil/index.html.erb</p>
+<h1>Accueil</h1>
+
+<h2>Bienvenue : <%=current_user.prenom %> <%=current_user.nom %></h2>
+
+<h3>Liste des produits à vendre</h3>
+<table border="1">
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+    <th>Ref</th>
+    <th>Prix</th>
+    <th>Stock</th>
+    <th></th>
+  </tr>
+
+
+<% @pieces.each do |piece| %>
+  <tr>
+    <td><%= piece.nom %></td>
+    <td><%= piece.desc %></td>
+    <td><%= piece.ref %></td>
+    <td><%= piece.prix %></td>
+    <td><%= piece.stock %></td>
+    <td><%= link_to 'Buy', buy_user_piece_path(piece, current_user)  %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+<p style="color : #EF05C0;"><%=notice %></p>
+<br />

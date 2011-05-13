@@ -1,4 +1,8 @@
 Projet2::Application.routes.draw do
+  get "users/index"
+
+  get "users/show"
+
   devise_for :users
 
   resources :pieces_commandes
@@ -7,9 +11,13 @@ Projet2::Application.routes.draw do
  
   resources :roles
 
-   resources :personnes do
-    resources :pieces
-  end
+   resources :users do
+    resources :pieces do
+      member do
+        get 'buy'
+     end
+    end
+   end
   
   root :to => "accueil#index"
 
