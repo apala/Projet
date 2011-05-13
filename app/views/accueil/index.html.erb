@@ -1,7 +1,7 @@
 <h1>Accueil</h1>
 <% if user_signed_in? %>
 <h2>Bienvenue : <%=current_user.prenom %> <%=current_user.nom %></h2>
-<% end %>
+
 
 <h3>Liste des produits à vendre</h3>
 <table border="1">
@@ -29,3 +29,4 @@
 <br />
 <p style="color : #EF05C0;"><%=notice %></p>
 <br />
+<% end %>
